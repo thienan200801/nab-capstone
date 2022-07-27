@@ -1,0 +1,113 @@
+.product-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4vw;
+
+    .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 55vw;
+
+        img, video {
+            width: 26vw;
+            height: fit-content;
+            margin: 1vh 1vw 1vh 0;
+        }
+    }
+
+    .detail {
+        width: 33vw;
+
+        .name {
+            font-size: 4.4rem;
+            line-height: 4.4rem;
+            font-weight: 600;
+            margin-top: 1vh;
+        }
+
+        h4 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            margin-top: 1vh;
+        }
+
+        .price {
+            padding-top: 5vh;
+            font-size: 3.3rem;
+            font-weight: 700;
+            color: crimson;
+            text-align: end;
+        }
+
+        .size-selection {
+            padding: 8vh 0 4vh;
+
+            p {
+                font-weight: 300;
+                margin-bottom: 1vh;
+            }
+
+            .wrapper {
+                display: flex;
+                flex-wrap: wrap;
+
+                .size {
+                    padding: 1.7vh 1.5vw 1vh;
+                    border-radius: 5px;
+                    border: 1px solid #ccc;
+                    margin-right: 0.4vw;
+                    margin-top: 1vh;
+                    cursor: pointer;
+
+                    &:hover {
+                        border-color: black;
+                    }
+                }
+            }
+        }
+
+        .color-selection {
+            padding: 2vh 0;
+
+            p {
+                font-weight: 300;
+                margin-bottom: 1vh;
+            }
+
+            .wrapper {
+                display: flex;
+                flex-wrap: wrap;
+
+                .color {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    border: 2px solid white;
+                    outline: 1px solid #ccc;
+                    margin-right: 0.7vw;
+                    margin-top: 1.2vh;
+                    cursor: pointer;
+
+                    &:hover {
+                        outline-color: black;
+                    }
+                }
+            }
+        }
+
+        .add {
+            width: 100%;
+            color: white;
+            font-size: 2.2rem;
+            padding: 3vh 0;
+            border-radius: 50px;
+            background-color: var(--primary-color);
+            margin: 10vh 0;
+            cursor: pointer;
+        }
+
+        .quote {
+            line-height: 3rem;
+        }
+    }
+}

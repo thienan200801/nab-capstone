@@ -1,0 +1,79 @@
+.product {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.02);
+    transition: 0.2s ease;
+    color: var(--text-color);
+
+    &:hover {
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+        transform: translateY(-4px);
+
+        & .add {
+            color: var(--primary-color);
+            background-color: white;
+            font-weight: 500;
+        }
+    }
+
+
+    img {
+        width: 100%;
+        border-radius: 16px;
+        -webkit-user-drag: none;
+    }
+
+    .info {
+        padding: 8px 0;
+
+        .description {
+            font-weight: 300;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .name {
+            margin-top: 4px;
+            font-size: 1.8rem;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .price {
+            padding-top: 5vh;
+            font-size: 3rem;
+            font-weight: 700;
+            color: crimson;
+        }
+    }
+
+    .icon {
+        position: absolute;
+        font-size: 3rem;
+        bottom: 20px; 
+        right: 12px;
+    }
+
+    .add {
+        position: absolute;
+        line-height: 1.6rem;
+        bottom: 20px; 
+        right: 12px;
+        padding: 5px 8px 3px;
+        color: white;
+        background-color: var(--primary-color);
+        border-radius: 20px;
+        cursor: pointer;
+        border-color: var(--primary-color);
+        word-spacing: 1px;
+    }
+}
