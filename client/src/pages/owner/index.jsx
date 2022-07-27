@@ -119,33 +119,39 @@ export const Owner = () => {
         }
     }, [data])
     return <div className="owner-container">
-        <div className="owner-title">
-            <div className="title-name">Name</div>
-            <div className="title-price">Price</div>
-            <div className="title-color">Color</div>
-            <div className="title-size">Size</div>
+        <div className="header">
+            <div className="table-name">PRODUCT LIST</div>
+            <button className="btn">Add product</button>
         </div>
-        {data?.products.map((value) => (
-            <div className="owner-item" key={value.id}>
-                <div className="item-name">{value.name}</div>
-                <div className="item-price">{value.price}</div>
-                <div className="item-color">{
-                    value.colors.map((value2, index) => {
-                        if (index !== value.colors.length - 1) {
-                            return value2.name + ', '
+        <div className="main">
+            <div className="owner-title">
+                <div className="title-name">Name</div>
+                <div className="title-price">Price</div>
+                <div className="title-color">Color</div>
+                <div className="title-size">Size</div>
+            </div>
+            {data?.products.map((value) => (
+                <div className="owner-item" key={value.id}>
+                    <div className="item-name">{value.name}</div>
+                    <div className="item-price">{value.price}</div>
+                    <div className="item-color">{
+                        value.colors.map((value2, index) => {
+                            if (index !== value.colors.length - 1) {
+                                return value2.name + ', '
+                            }
+                            else
+                                return value2.name
+                        })
+                    }</div>
+                    <div className="item-size">{value.sizes.map((value2, index) => {
+                        if (index !== value.sizes.length - 1) {
+                            return value2 + ', '
                         }
                         else
-                            return value2.name
-                    })
-                }</div>
-                <div className="item-size">{value.sizes.map((value2, index) => {
-                    if (index !== value.sizes.length - 1) {
-                        return value2 + ', '
-                    }
-                    else
-                        return value2
-                })}</div>
-            </div>
-        ))}
+                            return value2
+                    })}</div>
+                </div>
+            ))}
+        </div>
     </div>
 }

@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500&family=Roboto:wght@300&display=swap');
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+:root{
+  --bgrSecond: #f5f5f5;
+  --primary: #111111;
+  --text-color: #1A1A1A;
+  --btn-hover: #757575
+}
 .App {
   text-align: center;
 }
@@ -44,12 +55,19 @@
   width: 80vw;
   min-width: 300px;
   margin: auto;
+  font-family: 'Roboto', sans-serif;
+  padding: 20px 30px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid ;
 }
 .owner-title{
   display: flex;
   justify-content: center;
   font-weight: bold;
   width: 100%;
+  padding: 10px 0px;
+  align-items: center;
 }
 .owner-title>*, .owner-item>*{
   width: 14%;
@@ -62,4 +80,36 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  padding: 5px 0px;
+  align-items: center;
+}
+
+.owner-container>.main>*:nth-of-type(even){
+  background-color: var(--bgrSecond);
+}
+.owner-container .table-name{
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin: 0 0 0px -10px;
+  line-height: 35px;
+}
+.owner-container .btn{
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+  background-color: var(--primary);
+  color: white;
+  width: 100px;
+  padding: 5px 10px;
+  line-height: 25px;
+  text-align: center;
+}
+.owner-container .btn:hover{
+  background-color: var(--btn-hover);
+  border-color: var(--btn-hover);
+  cursor: pointer;
+}
+.owner-container .header{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
