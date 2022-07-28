@@ -53,13 +53,14 @@ body{
   display: flex;
   flex-direction: column;
   width: 80vw;
-  min-width: 300px;
+  min-width: 800px;
   margin: auto;
   font-family: 'Roboto', sans-serif;
   padding: 20px 30px;
   background-color: white;
   border-radius: 10px;
   border: 1px solid ;
+  position: relative;
 }
 .owner-title{
   display: flex;
@@ -68,12 +69,26 @@ body{
   width: 100%;
   padding: 10px 0px;
   align-items: center;
+  height: 40px;
 }
 .owner-title>*, .owner-item>*{
-  width: 14%;
+  width: 16.67%;
+}
+.item-edit, .item-delete, .title-edit, .title-delete{
+  width: 8.3%;
+  text-align: center;
+}
+.item-edit, .item-delete{
+  height: 50px;
+  line-height: 50px;
+}
+.item-edit:hover, .item-delete:hover{
+  cursor: pointer;
+  background-color: rgb(232, 229, 229);
+  border-radius: 5px;
 }
 .title-name, .item-name{
-  width: 57%;
+  width: 33.2%;
 }
 
 .owner-item{
@@ -82,6 +97,7 @@ body{
   width: 100%;
   padding: 5px 0px;
   align-items: center;
+  height: 40px;
 }
 
 .owner-container>.main>*:nth-of-type(even){

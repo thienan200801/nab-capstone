@@ -4,7 +4,7 @@ import { Owner } from './pages/owner';
 import { ProductInputForm } from './pages/owner/InputForm';
 
 function App() {
-  return <ProductInputForm></ProductInputForm>
+  return <Owner></Owner>
 }
 
 export default App;

@@ -88,5 +88,71 @@
             "37",
             "38"
         ]
+    },
+    {
+        "id": "726ca877-fd43-4a76-af01-f071a9662acd",
+        "name": "Sữa bột cho mèo 110g Dr.Kyan Precaten",
+        "price": 12000,
+        "stock": 123,
+        "description": "description",
+        "categories": [
+            "giày nam"
+        ],
+        "pictures": [
+            "giày nam"
+        ],
+        "colors": [
+            {
+                "name": "đỏ",
+                "hexValue": "#111"
+            }
+        ],
+        "sizes": [
+            "35"
+        ]
+    },
+    {
+        "id": "7daa75fb-b72f-4f57-9e5e-350e811f649a",
+        "name": "Nước rửa khóe mắt chó mèo Precaten",
+        "price": 12222,
+        "stock": 12,
+        "description": "",
+        "categories": [
+            ""
+        ],
+        "pictures": [
+            ""
+        ],
+        "colors": [
+            {
+                "name": "xám",
+                "hexValue": "#112"
+            }
+        ],
+        "sizes": [
+            ""
+        ]
+    },
+    {
+        "id": "c71cd3b7-881f-4697-b3fa-cbd781b1e428",
+        "name": "Heineiken",
+        "price": 12000,
+        "stock": 123,
+        "description": "Bia ngon",
+        "categories": [
+            ""
+        ],
+        "pictures": [
+            ""
+        ],
+        "colors": [
+            {
+                "name": "xanh lá",
+                "hexValue": "#232"
+            }
+        ],
+        "sizes": [
+            ""
+        ]
     }
 ]

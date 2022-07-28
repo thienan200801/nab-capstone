@@ -1,8 +1,22 @@
+section{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    background-color: rgba(0,0,0,0.2);
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    z-index: 2;
+    overflow: scroll;
+}
 .inputForm{
     width: 50vw;
     min-width: 500px;
     padding: 20px 30px;
     margin: auto;
+    background-color: white;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
 }
 .inputForm>label{
     display: block;
@@ -11,7 +25,7 @@
     margin-bottom: 5px;
 }
 .inputForm>input{
-    width: 90%;
+    width: 98%;
     margin: 5px 0 10px 0;
     height: 1.4rem;
     line-height: 1.3rem;
@@ -23,7 +37,7 @@
     outline: none;
 }
 .inputForm>textarea{
-    width: 90%;
+    width: 98%;
     padding: 0.3rem 5px;
     border: 1px solid var(--primary);
     border-radius: 5px;
@@ -31,6 +45,11 @@
 .inputForm .shortInput{
     width: 20%;
     min-width: 100px;
+}
+label.shortLabel {
+    width: 20%;
+    display: block;
+    margin-right: 22px;
 }
 ::placeholder{
     font-family: 'Roboto', sans-serif;
@@ -58,6 +77,12 @@
     background-color: var(--btn-hover);
     border-color: var(--btn-hover);
     cursor: pointer;
+}
+
+.btn:disabled{
+    background-color: var(--btn-hover);
+    border-color: var(--btn-hover);
+    cursor: default;
 }
 p.errMsg{
     color: red;
