@@ -38,7 +38,7 @@ section {
 }
 
 .inputForm>input:focus,
-.inputForm>textarea:focus {
+.inputForm>textarea:focus, .shortInput:focus {
     outline: none;
 }
 
@@ -124,6 +124,8 @@ textarea.errMsg {
 }
 .bi.bi-plus:hover, .bi.bi-dash-circle:hover{
     cursor: pointer;
-    background-color: rgb(232, 229, 229);
     color: black;
+}
+.bi.bi-plus:hover{
+    background-color: rgb(232, 229, 229);
 }

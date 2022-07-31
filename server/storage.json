@@ -1,6 +1,38 @@
 [
     {
-        "id": "0c01eac9-51e6-4be3-8cbd-36854f066cf8",
+        "id": "ec8a2326-3414-4063-bbe0-7c7286455acc",
+        "name": "Nike React Infinity Run Flyknit 1234",
+        "price": 102,
+        "stock": 1004,
+        "categories": [
+            "running",
+            "women"
+        ],
+        "pictures": [
+            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/03bb7279-a9df-4f6c-a2c1-8cfa2290c501/react-infinity-run-flyknit-3-road-running-shoes-WnVRk9.png",
+            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/83f84f6a-a25b-4c40-b6e8-e1fd5700b5eb/react-infinity-run-flyknit-3-road-running-shoes-WnVRk9.png"
+        ],
+        "colors": [
+            {
+                "name": "xanh dương",
+                "hexValue": "#803362"
+            },
+            {
+                "name": "tím",
+                "hexValue": "#cbd3d5"
+            }
+        ],
+        "sizes": [
+            "3",
+            "36",
+            "37",
+            "38"
+        ],
+        "featuringFrom": "11/11/2022",
+        "featuringTo": "12/12/2022"
+    },
+    {
+        "id": "d06ea227-bc1d-4f56-b4fe-018bf5dba9ac",
         "name": "Nike React Infinity Run Flyknit 3",
         "price": 4409000,
         "stock": 100,
@@ -27,132 +59,43 @@
             "36",
             "37",
             "38"
-        ]
+        ],
+        "featuringFrom": null,
+        "featuringTo": null
     },
     {
-        "id": "f59863b1-56c6-4a85-be8c-a9da689a55cd",
-        "name": "Nike React Infinity Run Flyknit 3",
-        "price": 4409000,
-        "stock": 100,
-        "categories": [
-            "running",
-            "women"
-        ],
-        "pictures": [
-            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/03bb7279-a9df-4f6c-a2c1-8cfa2290c501/react-infinity-run-flyknit-3-road-running-shoes-WnVRk9.png",
-            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/83f84f6a-a25b-4c40-b6e8-e1fd5700b5eb/react-infinity-run-flyknit-3-road-running-shoes-WnVRk9.png"
-        ],
-        "colors": [
-            {
-                "name": "Pink Prime",
-                "hexValue": "#803362"
-            },
-            {
-                "name": "Pure Platinum",
-                "hexValue": "#cbd3d5"
-            }
-        ],
-        "sizes": [
-            "35",
-            "36",
-            "37",
-            "38"
-        ]
-    },
-    {
-        "id": "0186ddc8-3c22-4c72-9237-3ef4a58e29a4",
-        "name": "Nike React Infinity Run Flyknit 3",
-        "price": 4409000,
-        "stock": 100,
-        "categories": [
-            "running",
-            "women"
-        ],
-        "pictures": [
-            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/03bb7279-a9df-4f6c-a2c1-8cfa2290c501/react-infinity-run-flyknit-3-road-running-shoes-WnVRk9.png",
-            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/83f84f6a-a25b-4c40-b6e8-e1fd5700b5eb/react-infinity-run-flyknit-3-road-running-shoes-WnVRk9.png"
-        ],
-        "colors": [
-            {
-                "name": "Pink Prime",
-                "hexValue": "#803362"
-            },
-            {
-                "name": "Pure Platinum",
-                "hexValue": "#cbd3d5"
-            }
-        ],
-        "sizes": [
-            "35",
-            "36",
-            "37",
-            "38"
-        ]
-    },
-    {
-        "id": "726ca877-fd43-4a76-af01-f071a9662acd",
-        "name": "Sữa bột cho mèo 110g Dr.Kyan Precaten",
-        "price": 12000,
-        "stock": 123,
-        "description": "description",
-        "categories": [
-            "giày nam"
-        ],
-        "pictures": [
-            "giày nam"
-        ],
-        "colors": [
-            {
-                "name": "đỏ",
-                "hexValue": "#111"
-            }
-        ],
-        "sizes": [
-            "35"
-        ]
-    },
-    {
-        "id": "7daa75fb-b72f-4f57-9e5e-350e811f649a",
+        "id": "3c6e8e9e-35fb-41be-a4eb-bc32b8054280",
         "name": "Nước rửa khóe mắt chó mèo Precaten",
         "price": 12222,
-        "stock": 12,
-        "description": "",
-        "categories": [
-            ""
-        ],
-        "pictures": [
-            ""
-        ],
-        "colors": [
-            {
-                "name": "xám",
-                "hexValue": "#112"
-            }
-        ],
-        "sizes": [
-            ""
-        ]
-    },
-    {
-        "id": "c71cd3b7-881f-4697-b3fa-cbd781b1e428",
-        "name": "Heineiken",
-        "price": 12000,
         "stock": 123,
-        "description": "Bia ngon",
         "categories": [
-            ""
+            "cate1",
+            " cate2",
+            " cate3"
         ],
         "pictures": [
-            ""
+            "http",
+            "httpsc"
         ],
         "colors": [
             {
-                "name": "xanh lá",
-                "hexValue": "#232"
+                "name": "green",
+                "hexValue": "#112"
+            },
+            {
+                "name": "red",
+                "hexValue": "#123"
+            },
+            {
+                "name": "blue",
+                "hexValue": "#125"
             }
         ],
         "sizes": [
-            ""
-        ]
+            "23",
+            "24"
+        ],
+        "featuringFrom": "01/01/2001",
+        "featuringTo": "02/02/2002"
     }
 ]

@@ -2,14 +2,27 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import '../../App.css';
 import { useMutationAddProduct } from "../../data/mutations/add-product";
+import { useMutationRemoveProduct } from "../../data/mutations/remove-product";
 import { useQueryGetProducts } from '../../data/queries/get-products';
 import { ProductInputForm } from "./InputForm";
 
 const defaultData = [
     {
-        "name": "Nike React Infinity Run Flyknit 3",
-        "price": 4409000,
-        "stock": 100,
+        "id": "0c01eac9-51e6-4be3-8cbd-36854f066cf8",
+        "name": "Nike React Infinity Run Flyknit 1234",
+        "price": 102,
+        "stock": 1004,
+        "colors": [
+            {
+                "name": "xanh dương",
+                "hexValue": "#803362"
+            },
+            {
+                "name": "tím",
+                "hexValue": "#cbd3d5"
+            }
+        ],
+        "description": "",
         "categories": [
             "running",
             "women"
@@ -18,6 +31,20 @@ const defaultData = [
             "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/03bb7279-a9df-4f6c-a2c1-8cfa2290c501/react-infinity-run-flyknit-3-road-running-shoes-WnVRk9.png",
             "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/83f84f6a-a25b-4c40-b6e8-e1fd5700b5eb/react-infinity-run-flyknit-3-road-running-shoes-WnVRk9.png"
         ],
+        "sizes": [
+            "3",
+            "36",
+            "37",
+            "38"
+        ],
+        "featuringFrom": "11/11/2022",
+        "featuringTo": "12/12/2022"
+    },
+    {
+        "id": "0186ddc8-3c22-4c72-9237-3ef4a58e29a4",
+        "name": "Nike React Infinity Run Flyknit 3",
+        "price": 4409000,
+        "stock": 100,
         "colors": [
             {
                 "name": "Pink Prime",
@@ -28,16 +55,7 @@ const defaultData = [
                 "hexValue": "#cbd3d5"
             }
         ],
-        "sizes": [
-            "35",
-            "36",
-            "37",
-            "38"
-        ]
-    }, {
-        "name": "Nike React Infinity Run Flyknit 3",
-        "price": 4409000,
-        "stock": 100,
+        "description": null,
         "categories": [
             "running",
             "women"
@@ -46,58 +64,54 @@ const defaultData = [
             "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/03bb7279-a9df-4f6c-a2c1-8cfa2290c501/react-infinity-run-flyknit-3-road-running-shoes-WnVRk9.png",
             "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/83f84f6a-a25b-4c40-b6e8-e1fd5700b5eb/react-infinity-run-flyknit-3-road-running-shoes-WnVRk9.png"
         ],
-        "colors": [
-            {
-                "name": "Pink Prime",
-                "hexValue": "#803362"
-            },
-            {
-                "name": "Pure Platinum",
-                "hexValue": "#cbd3d5"
-            }
-        ],
         "sizes": [
             "35",
             "36",
             "37",
             "38"
-        ]
-    }, {
-        "name": "Nike React Infinity Run Flyknit 3",
-        "price": 4409000,
-        "stock": 100,
+        ],
+        "featuringFrom": null,
+        "featuringTo": null
+    },
+    {
+        "id": "73636179-bf80-48d2-90c0-ad554f764394",
+        "name": "Nước rửa khóe mắt chó mèo Precaten",
+        "price": 12222,
+        "stock": 123,
+        "colors": [
+            {
+                "name": "green",
+                "hexValue": "#112"
+            },
+            {
+                "name": "red",
+                "hexValue": "#123"
+            },
+            {
+                "name": "blue",
+                "hexValue": "#125"
+            }
+        ],
+        "description": "test2",
         "categories": [
-            "running",
-            "women"
+            "cate1",
+            " cate2",
+            " cate3"
         ],
         "pictures": [
-            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/03bb7279-a9df-4f6c-a2c1-8cfa2290c501/react-infinity-run-flyknit-3-road-running-shoes-WnVRk9.png",
-            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/83f84f6a-a25b-4c40-b6e8-e1fd5700b5eb/react-infinity-run-flyknit-3-road-running-shoes-WnVRk9.png"
-        ],
-        "colors": [
-            {
-                "name": "Pink Prime",
-                "hexValue": "#803362"
-            },
-            {
-                "name": "Pure Platinum",
-                "hexValue": "#cbd3d5"
-            }
+            "http",
+            "httpsc"
         ],
         "sizes": [
-            "35",
-            "36",
-            "37",
-            "38"
-        ]
+            "23",
+            "24"
+        ],
+        "featuringFrom": "01/01/2001",
+        "featuringTo": "02/02/2002"
     }
-
 ]
 
 export const StoreContext = React.createContext(null);
-
-
-
 
 export const Owner = (props) => {
     const [isShow, setIsShow] = useState(false);
@@ -106,20 +120,27 @@ export const Owner = (props) => {
     const store = {
         show: { isShow, setIsShow },
         edit: { isEdit, setIsEdit },
-        editInfo: {dataEdit, setDataEdit},
+        editInfo: { dataEdit, setDataEdit },
     }
     const [addProductMutation, { dataMutation, loadingMutation, errorMutation }] = useMutationAddProduct();
-    const { loading, error, data } = useQueryGetProducts()
+    const [removeProductMutation, resultRemove] = useMutationRemoveProduct();
+
+    const { loading, error, data, refetch } = useQueryGetProducts();
 
     const openEdit = (item) => {
-        setDataEdit({...item});
-        setIsShow(!isShow);
-        setIsEdit(!isEdit)
-        // console.log(dataEdit);
+        setDataEdit({ ...item });
+        setIsShow(true);
+        setIsEdit(true);
     }
-    // useEffect(()=>{
-    //     console.log(dataEdit)
-    // },[dataEdit])
+
+    const removeProduct = (id) => {
+        removeProductMutation({
+            variables: {
+                "removeProductId": id
+            }
+        })
+        refetch();
+    }
 
     useEffect(() => {
         if (data && data.products.length === 0) {
@@ -134,7 +155,9 @@ export const Owner = (props) => {
                             "categories": [...value.categories],
                             "pictures": [...value.pictures],
                             "colors": [...value.colors],
-                            "sizes": [...value.sizes]
+                            "sizes": [...value.sizes],
+                            "featuringFrom": value.featuringFrom,
+                            "featuringTo": value.featuringTo
                         }
                     }
                 })
@@ -148,7 +171,7 @@ export const Owner = (props) => {
         <div className="owner-container">
             <div className="header">
                 <div className="table-name">PRODUCT LIST</div>
-                <button className="btn" onClick={() => setIsShow(!isShow)}>Add product</button>
+                <button className="btn" onClick={() => setIsShow(true)}>Add product</button>
             </div>
             <div className="main">
                 <div className="owner-title">
@@ -179,11 +202,11 @@ export const Owner = (props) => {
                             else
                                 return value2
                         })}</div>
-                        <div className="item-edit" onClick={()=> openEdit(value)}>
+                        <div className="item-edit" onClick={() => openEdit(value)}>
                             <div className="bi bi-pencil"></div>
                         </div>
                         <div className="item-delete">
-                            <div className="bi bi-trash"></div>
+                            <div className="bi bi-trash" onClick={() => removeProduct(value.id)}></div>
                         </div>
                     </div>
                 ))}
