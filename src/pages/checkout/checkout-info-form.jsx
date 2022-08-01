@@ -1,9 +1,20 @@
 import { Formik } from "formik";
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import nikeLogo from "../imgsrc/nike-logo.png";
 import GetFee from "./fee";
 import "./style-customer-info.css";
 import TableProductInCart from "./table_products_in_cart";
+import { gql, useMutation } from "@apollo/client";
+
+
+const GET_PRODUCT_INFOR = gql`
+  mutation Mutation($customerId: ID!) {
+    emptyCart(customerId: $customerId) {
+      id
+    }
+  }
+`;
 
 export default function CheckoutInfoForm({
   customerInfo,
@@ -14,16 +25,30 @@ export default function CheckoutInfoForm({
   updateInfo,
 }) {
   console.log("customerInfo", customerInfo);
-  if (!customerInfo.name) return null;
+  const [emptyCart, emptyCartResult] = useMutation(GET_PRODUCT_INFOR);
+
+  const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    emptyCart({
+      variables: {
+        customerId: "nvp",
+      },
+    }).then(() => {
+      navigate("../thanhcong");
+    });
+  };
 
   const { name } = customerInfo || {};
+
+  if (!customerInfo.name) return null;
+
 
   return (
     <div>
       <div>
-
         <Formik
-          initialValues={{ name: name, email: "novapo@gmail.com"}}
+          initialValues={{ name: name, email: "novapo@gmail.com" }}
           validate={(values) => {
             const errors = {};
 
@@ -175,9 +200,13 @@ export default function CheckoutInfoForm({
               <TableProductInCart productsInCart={productsInCarts} />
               <GetFee location={getLocation} subTotal={subTotal} />
 
-              <div className="btn-order-content">
+              <div to="/thanhcong" className="btn-order-content">
                 <div className="button-order">
-                  <button class="btn btn-dark btn-lg d-1" type="submit">
+                  <button
+                    onClick={handleCheckout}
+                    class="btn btn-dark btn-lg d-1"
+                    type="submit"
+                  >
                     ĐẶT HÀNG
                   </button>
                 </div>

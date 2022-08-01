@@ -46,12 +46,26 @@ const UPDATE_CART = gql`
 
 export function ListCartItems() {
   const [productsInCart, setProductsInCart] = useState([]);
+
+  const [originalCartStatus, setOriginalCartStatus] = useState();
+
   const [GetCartItems, CartItemsResult] = useLazyQuery(GET_LIST_CART_ITEMS);
   const [GetItemInfo, ItemInfoResult] = useLazyQuery(GET_PRODUCT_INFOR);
   const [HandleUpdateCart, CartAfterUpdate] = useMutation(UPDATE_CART);
   let navigate = useNavigate();
 
-  const updateCart = async (id, newQuantity) => {
+  const updateCartInLocal = (id, newQuantity) => {
+    if (newQuantity === 0) {
+      if (!window.confirm("Remove?")) return;
+    }
+    const newCartItems = productsInCart.map((item) => {
+      if (item.id === id) return { ...item, quantity: newQuantity };
+      else return { ...item };
+    });
+    setProductsInCart(newCartItems);
+  };
+
+  const handleUpdateCartToServer = async (id, newQuantity) => {
     console.log("update Cart", newQuantity);
 
     const newCartItems = productsInCart.map((product) => {
@@ -104,9 +118,8 @@ export function ListCartItems() {
       return { id: item.productId, quantity: item.quantity, color: item.color };
     });
 
-   
+    console.log(CartItems);
 
-    // get product details infor
     let ProductDetails = [];
     for (let item of CartItems) {
       const detail = await GetItemInfo({
@@ -114,15 +127,21 @@ export function ListCartItems() {
           productId: item.id,
         },
       });
-      ProductDetails.push(detail.data);
+      if (detail.data.product) {
+        ProductDetails.push(detail.data);
+      }
     }
 
     // find name of cart item
+
+    
+
+    console.log(ProductDetails);
     const products = CartItems.map((cartItem) => {
       const productDetail = ProductDetails.find(
-        (e) => e.product.id === cartItem.id
+        (e) => e.product?.id === cartItem.id
       );
-      return { ...cartItem, ...productDetail.product };
+      return { ...cartItem, ...productDetail?.product };
     });
 
     let quantityItem = {};
@@ -142,6 +161,11 @@ export function ListCartItems() {
       return { ...checkedItem, checked: cartItem["checked"] };
     });
     setProductsInCart(finalRes);
+    setOriginalCartStatus(finalRes);
+
+
+    console.log(finalRes);
+
   };
 
   useEffect(() => {
@@ -152,10 +176,11 @@ export function ListCartItems() {
   const [subToTal, setSubTotal] = useState(0);
 
   function handleChooseItem(item) {
-
-    let countIsChecked = 0; 
+    let countIsChecked = 0;
+    let countProducts = 0;
 
     let newProductsInCart = productsInCart.map((product) => {
+      if(product.quantity > 0 ) countProducts++;
       if (product.id === item.id) {
         let new_product = { ...product };
         if (new_product["checked"]) {
@@ -166,13 +191,13 @@ export function ListCartItems() {
         }
         return new_product;
       } else {
-        if(product['checked'] === true) countIsChecked++;
+        if (product["checked"] === true) countIsChecked++;
         return { ...product };
       }
     });
 
-    console.log(countIsChecked);
-    if (countIsChecked === productsInCart.length) handleSelectAll(true);
+    console.log(countIsChecked,countProducts);
+    if (countIsChecked === countProducts) handleSelectAll(true);
     else setSelectAll(false);
 
     setProductsInCart(newProductsInCart);
@@ -181,6 +206,7 @@ export function ListCartItems() {
   function handleSubTotal() {
     let tmpSubtotal = 0;
     productsInCart.map((product) => {
+      if (product.quantity === 0 )return 0;
       return product.checked
         ? (tmpSubtotal += product.price * product.quantity)
         : tmpSubtotal;
@@ -193,6 +219,7 @@ export function ListCartItems() {
   }, [productsInCart]);
 
   function handleCheckBeforeClick() {
+    handleUpdateCartToServer();
     if (!subToTal) return alert("Please choose items before next step!");
     else {
       navigate("../thanhtoan");
@@ -267,7 +294,15 @@ export function ListCartItems() {
               >
                 TIẾP TỤC MUA HÀNG
               </button>
-              {modalOpen && <Modal setOpenModal={setModalOpen} />}
+              {modalOpen && (
+                <Modal
+                  setOpenModal={setModalOpen}
+                  updateCartToServer={handleUpdateCartToServer}
+                  removeChange={() => {
+                    setProductsInCart(originalCartStatus);
+                  }}
+                />
+              )}
             </Link>
           </div>
         </div>
@@ -281,7 +316,9 @@ export function ListCartItems() {
                   className="align-middle"
                   id="flexCheckChecked"
                   checked={selectAll}
-                  onChange={(event)=>{handleSelectAll(event.target.checked)}}
+                  onChange={(event) => {
+                    handleSelectAll(event.target.checked);
+                  }}
                 />
               </th>
               <th scope="col cart-item-content" style={{ width: 400 }}>
@@ -299,7 +336,7 @@ export function ListCartItems() {
             {productsInCart.map((item, index) => {
               return (
                 <CartItem
-                  updateCart={updateCart}
+                  updateCart={updateCartInLocal}
                   item={item}
                   key={index}
                   handleChooseItem={handleChooseItem}

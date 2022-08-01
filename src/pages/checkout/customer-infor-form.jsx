@@ -76,13 +76,15 @@ const CustomerInforForm = () => {
       ProductDetails.push(detail.data);
     }
 
+    
+
     // find name of cart item
     const products = CartItems.map((cartItem) => {
       const productDetail = ProductDetails.find(
-        (e) => e.product.id === cartItem.id
+        (e) => e.product?.id === cartItem?.id
       );
-      return { ...cartItem, ...productDetail.product };
-    });
+      return { ...cartItem, ...productDetail?.product };
+    }).filter(e=>e.quantity > 0);
 
     let quantityItem = {};
     products.forEach((e) => {
