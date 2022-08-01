@@ -3,7 +3,7 @@ import { useQuery, gql, useLazyQuery, useMutation } from "@apollo/client";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { useState } from "react";
 import CartItem from "./cart-item";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./style-list-cart-items.css";
 import logo from "../imgsrc/Logo_NIKE.svg.png";
 import Modal from "./modalCheckout";
@@ -49,6 +49,7 @@ export function ListCartItems() {
   const [GetCartItems, CartItemsResult] = useLazyQuery(GET_LIST_CART_ITEMS);
   const [GetItemInfo, ItemInfoResult] = useLazyQuery(GET_PRODUCT_INFOR);
   const [HandleUpdateCart, CartAfterUpdate] = useMutation(UPDATE_CART);
+  let navigate = useNavigate();
 
   const updateCart = async (id, newQuantity) => {
     console.log("update Cart", newQuantity);
@@ -102,6 +103,8 @@ export function ListCartItems() {
     const CartItems = CartItemsData.data.customer.items.map((item) => {
       return { id: item.productId, quantity: item.quantity, color: item.color };
     });
+
+   
 
     // get product details infor
     let ProductDetails = [];
@@ -191,6 +194,9 @@ export function ListCartItems() {
 
   function handleCheckBeforeClick() {
     if (!subToTal) return alert("Please choose items before next step!");
+    else {
+      navigate("../thanhtoan");
+    }
   }
 
   const [selectAll, setSelectAll] = useState(false);
@@ -309,7 +315,7 @@ export function ListCartItems() {
             <div className="cart-total-text">Tổng cộng</div>
             <div className="cart-total-content">{subToTal} VND</div>
           </div>
-          <Link to="/thanhtoan" className="btn-order-content">
+          <div className="btn-order-content">
             <button
               className={`${
                 subToTal === 0
@@ -320,7 +326,7 @@ export function ListCartItems() {
             >
               ĐẶT HÀNG
             </button>
-          </Link>
+          </div>
         </div>
       </div>
     </div>
