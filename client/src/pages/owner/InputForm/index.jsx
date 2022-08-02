@@ -448,7 +448,7 @@ export const ProductInputForm = (props) => {
             {/* Product name */}
             <label
                 htmlFor="name">
-                Name
+                Name <span style={{color:'red'}}>(*)</span>
             </label>
             <input
                 type="text"
@@ -467,7 +467,7 @@ export const ProductInputForm = (props) => {
             {/* Product price */}
             <label
                 htmlFor="price">
-                Price
+                Price <span style={{color:'red'}}>(*)</span>
             </label>
             <input
                 type="text"
@@ -485,7 +485,7 @@ export const ProductInputForm = (props) => {
             {/* Product stock */}
             <label
                 htmlFor="stock">
-                Stock
+                Stock <span style={{color:'red'}}>(*)</span>
             </label>
             <input
                 type="text"
@@ -504,7 +504,7 @@ export const ProductInputForm = (props) => {
             {/* Product color */}
             <label
                 htmlFor="colorName">
-                Product Color
+                Product Color <span style={{color:'red'}}>(*)</span>
                 <span
                     className="bi bi-plus"
                     onClick={() => addColor()}>
@@ -574,7 +574,7 @@ export const ProductInputForm = (props) => {
             {/* Product categories */}
             <label
                 htmlFor="categories">
-                Categories
+                Categories <span style={{color:'red'}}>(*)</span>
             </label>
             <input
                 type="text"
@@ -593,7 +593,7 @@ export const ProductInputForm = (props) => {
             {/* Product url */}
             <label
                 htmlFor="pictureUrl">
-                Picture url
+                Picture url <span style={{color:'red'}}>(*)</span>
                 <span
                     className="bi bi-plus"
                     onClick={() => addUrlPictures()}>
@@ -628,7 +628,7 @@ export const ProductInputForm = (props) => {
             {/* Product sizes */}
             <label
                 htmlFor="sizes">
-                Sizes
+                Sizes <span style={{color:'red'}}>(*)</span>
                 <span
                     className="bi bi-plus"
                     onClick={() => addSize()}>
