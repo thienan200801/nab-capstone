@@ -32,6 +32,7 @@ const GET_PRODUCT_INFOR = gql`
       name
       price
       pictures
+      stock
     }
   }
 `;
@@ -44,7 +45,7 @@ const UPDATE_CART = gql`
   }
 `;
 
-export function ListCartItems() {
+export function ListCartItems({ setProductsToCheckout }) {
   const [productsInCart, setProductsInCart] = useState([]);
 
   const [originalCartStatus, setOriginalCartStatus] = useState();
@@ -128,15 +129,18 @@ export function ListCartItems() {
         },
       });
       if (detail.data.product) {
-        ProductDetails.push(detail.data);
+        ProductDetails.push({
+          product: {
+            ...detail.data.product,
+            max_number: detail.data.product.stock,
+          },
+        });
       }
     }
 
     // find name of cart item
 
-    
-
-    console.log(ProductDetails);
+    console.log("productgsdetials", ProductDetails);
     const products = CartItems.map((cartItem) => {
       const productDetail = ProductDetails.find(
         (e) => e.product?.id === cartItem.id
@@ -163,9 +167,7 @@ export function ListCartItems() {
     setProductsInCart(finalRes);
     setOriginalCartStatus(finalRes);
 
-
     console.log(finalRes);
-
   };
 
   useEffect(() => {
@@ -180,7 +182,7 @@ export function ListCartItems() {
     let countProducts = 0;
 
     let newProductsInCart = productsInCart.map((product) => {
-      if(product.quantity > 0 ) countProducts++;
+      if (product.quantity > 0) countProducts++;
       if (product.id === item.id) {
         let new_product = { ...product };
         if (new_product["checked"]) {
@@ -196,7 +198,7 @@ export function ListCartItems() {
       }
     });
 
-    console.log(countIsChecked,countProducts);
+    console.log(countIsChecked, countProducts);
     if (countIsChecked === countProducts) handleSelectAll(true);
     else setSelectAll(false);
 
@@ -206,7 +208,7 @@ export function ListCartItems() {
   function handleSubTotal() {
     let tmpSubtotal = 0;
     productsInCart.map((product) => {
-      if (product.quantity === 0 )return 0;
+      if (product.quantity === 0) return 0;
       return product.checked
         ? (tmpSubtotal += product.price * product.quantity)
         : tmpSubtotal;
@@ -220,8 +222,10 @@ export function ListCartItems() {
 
   function handleCheckBeforeClick() {
     handleUpdateCartToServer();
+
     if (!subToTal) return alert("Please choose items before next step!");
     else {
+      setProductsToCheckout(productsInCart);
       navigate("../thanhtoan");
     }
   }

@@ -3,15 +3,19 @@ import imgsample from "../imgsrc/1.jpg";
 import { useState } from "react";
 
 export default function CartItem({ item, updateCart, handleChooseItem }) {
-  if(item.quantity === 0) return null;
+  if (item.quantity === 0) return null;
+  console.log("cArtItem,item",item);
   return (
     <tr>
       <th scope="row" className="form-check">
-        <input type="checkbox" 
+        <input
+          type="checkbox"
           className="align-middle"
-          id="flexCheckChecked" 
+          id="flexCheckChecked"
           checked={item.checked}
-          onChange={()=>{handleChooseItem(item)}}
+          onChange={() => {
+            handleChooseItem(item);
+          }}
         />
       </th>
       <th scope="row">
@@ -24,7 +28,7 @@ export default function CartItem({ item, updateCart, handleChooseItem }) {
         <button
           className="item-quantity-edit"
           onClick={() => {
-            updateCart(item.id,item.quantity-1);
+            updateCart(item.id, item.quantity - 1);
           }}
         >
           -
@@ -38,6 +42,7 @@ export default function CartItem({ item, updateCart, handleChooseItem }) {
         />
 
         <button
+          disabled={item.max_number === item.quantity}
           className="item-quantity-edit"
           onClick={() => {
             updateCart(item.id, item.quantity + 1);
@@ -46,7 +51,7 @@ export default function CartItem({ item, updateCart, handleChooseItem }) {
           +
         </button>
       </th>
-      <th scope="row">{item.price*item.quantity} VND</th>
+      <th scope="row">{item.price * item.quantity} VND</th>
     </tr>
   );
 }

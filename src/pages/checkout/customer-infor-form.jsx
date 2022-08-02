@@ -31,6 +31,15 @@ const GET_CUSTOMER = gql`
     }
   }
 `;
+
+const UPDATE_PRODUCT = gql`
+  mutation Mutation($product: UpdateProductInput!) {
+    updateProduct(product: $product) {
+      id
+    }
+  }
+`;
+
 const GET_PRODUCT_INFOR = gql`
   query GetProductInfor($productId: ID!) {
     product(id: $productId) {
@@ -42,160 +51,97 @@ const GET_PRODUCT_INFOR = gql`
   }
 `;
 
-const CustomerInforForm = () => {
+const CustomerInforForm = ({ checkoutItems }) => {
   const [updateCustomerInfo, resultUpdateCustomerInfo] =
     useMutation(UPDATE_CUSTOMER);
+  const [updateStock, resultUpdateStock] = useMutation(UPDATE_PRODUCT);
   const [GetCartItems, resultGetCustomer] = useLazyQuery(GET_CUSTOMER);
-  const [GetItemInfo, ItemInfoResult] = useLazyQuery(GET_PRODUCT_INFOR);
-  const [productsInCart, setProductsInCart] = useState([]);
   const [customerInfo, setCustomerInfo] = useState({});
 
-  // table of product
-  const HandleGetCartItems = async () => {
-    const CartItemsData = await GetCartItems({
+  const fetchCustomerInfo = async () => {
+    const customer = await GetCartItems({
       variables: {
         customerId: "nvp",
       },
       fetchPolicy: "no-cache",
     });
-    const CartItems = CartItemsData.data.customer.items.map((item) => {
-      return { id: item.productId, quantity: item.quantity, color: item.color };
-    });
-
-    console.log("cart items data", CartItemsData.data.customer);
-    setCustomerInfo(CartItemsData.data.customer);
-
-    // get product details infor
-    let ProductDetails = [];
-    for (let item of CartItems) {
-      const detail = await GetItemInfo({
-        variables: {
-          productId: item.id,
-        },
-      });
-      ProductDetails.push(detail.data);
-    }
-
-    
-
-    // find name of cart item
-    const products = CartItems.map((cartItem) => {
-      const productDetail = ProductDetails.find(
-        (e) => e.product?.id === cartItem?.id
-      );
-      return { ...cartItem, ...productDetail?.product };
-    }).filter(e=>e.quantity > 0);
-
-    let quantityItem = {};
-    products.forEach((e) => {
-      quantityItem[e.id] = quantityItem[e.id]
-        ? (quantityItem[e.id] += e.quantity)
-        : (quantityItem[e.id] = e.quantity);
-    });
-
-    let finalRes = [];
-    for (let key in quantityItem) {
-      const productDetail = products.find((e) => e.id === key);
-      finalRes.push({ id: key, ...productDetail, quantity: quantityItem[key] });
-    }
-    finalRes = finalRes.map((checkedItem) => {
-      let cartItem = productsInCart.find((e) => e.id === checkedItem.id) || {};
-      return { ...checkedItem, checked: cartItem["checked"] };
-    });
-    setProductsInCart(finalRes);
+    console.log("customer infor fetch", customer);
+    setCustomerInfo(customer.data.customer);
   };
 
   useEffect(() => {
-    HandleGetCartItems();
+    fetchCustomerInfo();
   }, []);
+
+  const checked_items = checkoutItems.filter((item) => item.checked);
+
+  const handleUpdateStock = () => {
+    checked_items.forEach((item) => {
+      if (item.checked) {
+        updateStock({
+          variables: {
+            product: {
+              id: item.id,
+              stock: item.max_number - item.quantity,
+            },
+          },
+        });
+      }
+    });
+  };
 
   const UpdateInfo = useCallback(
     (values) => {
+      const new_cart = [];
+      console.log("update infor",checkoutItems);
+      const items = checkoutItems.forEach((item) => {
+        if (!item.checked) {
+          new_cart.push({
+            productId: item.id,
+            color: item.color,
+            quantity: item.quantity,
+          });
+        }
+      });
+
+      console.log("update info", new_cart);
+
       updateCustomerInfo({
         variables: {
           customer: {
             customerId: "nvp",
             name: values.name,
             location: values.address,
-            items: [
-              {
-                productId: "b85b9193-7cdd-446b-acdf-263a60cac188",
-                color: "white",
-                size: "M",
-                quantity: 7,
-              },
-            ],
+            items: new_cart
           },
         },
       }).then(() => {
+        handleUpdateStock();
         resultGetCustomer.refetch();
       });
     },
-    [updateCustomerInfo]
+    [updateCustomerInfo, checkoutItems]
   );
-
-  // handle validate
-  const validate = (values) => {
-    console.log(values);
-    const errors = {};
-    if (!values.name) {
-      errors.name = "* Required";
-    } else if (values.name.length > 50) {
-      errors.name = "* Must be 50 characters or less";
-    }
-
-    if (!values.province) {
-      errors.province = "* Required";
-    } else if (values.province.length > 20) {
-      errors.province = "* Must be 20 characters or less";
-    }
-
-    if (!values.district) {
-      errors.district = "* Required";
-    } else if (values.district.length > 20) {
-      errors.district = "* Must be 20 characters or less";
-    }
-
-    if (!values.address) {
-      errors.address = "* Required";
-    }
-
-    return errors;
-  };
-  // render form
-  const formik = useFormik({
-    initialValues: {
-      name: resultGetCustomer.name,
-      email: resultGetCustomer.email,
-      phone: "",
-      province: resultGetCustomer.location,
-      district: "",
-      address: "",
-    },
-    validate,
-    onSubmit: (values) => {
-      UpdateInfo(values);
-    },
-  });
 
   const [subTotal, setSubTotal] = useState(0);
   const [getLocation, setGetLocation] = useState("");
 
   function handleGetLocation(e) {
     // formik.handleChange(e);
-    const result = productsInCart
+    const result = checkoutItems
       .map((product) => product.price * product.quantity)
       .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
 
     setSubTotal(result);
     setGetLocation(e.target.value);
   }
+
   return (
     <div className="customer-info-wrapper">
       <CheckoutInfoForm
         customerInfo={customerInfo}
         handleGetLocation={handleGetLocation}
-        productsInCarts={productsInCart}
+        checkoutItems={checked_items}
         getLocation={getLocation}
         subTotal={subTotal}
         updateInfo={UpdateInfo}

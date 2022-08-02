@@ -19,7 +19,7 @@ const GET_PRODUCT_INFOR = gql`
 export default function CheckoutInfoForm({
   customerInfo,
   handleGetLocation,
-  productsInCarts,
+  checkoutItems,
   subTotal,
   getLocation,
   updateInfo,
@@ -41,7 +41,7 @@ export default function CheckoutInfoForm({
 
   const { name } = customerInfo || {};
 
-  if (!customerInfo.name) return null;
+  if (!customerInfo.id ) return null;
 
 
   return (
@@ -91,25 +91,6 @@ export default function CheckoutInfoForm({
             /* and other goodies */
           }) => (
             <form onSubmit={handleSubmit}>
-              {/* <input
-                type="email"
-                name="email"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.email}
-              />
-              {errors.email && touched.email && errors.email}
-              <input
-                type="password"
-                name="password"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.password}
-              />
-              {errors.password && touched.password && errors.password}
-              <button type="submit" disabled={isSubmitting}>
-                Submit
-              </button> */}
 
               <div className="header-wrapper">
                 <img src={nikeLogo} alt="Nike Logo" className="nike-logo" />
@@ -197,7 +178,7 @@ export default function CheckoutInfoForm({
                 ) : null}
               </div>
 
-              <TableProductInCart productsInCart={productsInCarts} />
+              <TableProductInCart productsInCart={checkoutItems} />
               <GetFee location={getLocation} subTotal={subTotal} />
 
               <div to="/thanhcong" className="btn-order-content">
