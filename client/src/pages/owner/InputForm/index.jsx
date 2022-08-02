@@ -1,7 +1,7 @@
-import React, { useCallback, useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import '../../../App.css'
-import './inputForm.css'
-import { Form, Formik, useField, useFormik, withFormik } from 'formik'
+import './inputForm.scss'
+import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { StoreContext } from "..";
 import { useMutationAddProduct } from "../../../data/mutations/add-product";
@@ -9,9 +9,9 @@ import { useQueryGetProducts } from "../../../data/queries/get-products";
 import { useMutationUpdateProduct } from "../../../data/mutations/update-product";
 
 export const ProductInputForm = (props) => {
-    const { loading, error, data, refetch } = useQueryGetProducts()
-    const [addProductMutation, { dataMutation, loadingMutation, errorMutation }] = useMutationAddProduct();
-    const [updateProductMutation, resultUpdate] = useMutationUpdateProduct();
+    const { refetch } = useQueryGetProducts()
+    const [addProductMutation] = useMutationAddProduct();
+    const [updateProductMutation] = useMutationUpdateProduct();
 
     const store = useContext(StoreContext);
     const [colorValues, setColorValues] = useState([{ name: '', hexValue: '' }]);
@@ -438,7 +438,7 @@ export const ProductInputForm = (props) => {
     }, [sizes])
 
 
-    return store.show.isShow ? <section>
+    return store.show.isShow ? <section className="owner-form">
         <form
             className="inputForm"
             onSubmit={formik.handleSubmit}>
@@ -458,6 +458,7 @@ export const ProductInputForm = (props) => {
                 onBlur={formik.handleBlur}
                 onChange={formik.handleChange}
                 placeholder="Enter product name"
+                spellCheck={false}
                 className={formik.touched.name && formik.errors.name ? 'errMsg' : null} />
             {formik.touched.name && formik.errors.name && (
                 <p className="errMsg">{formik.errors.name}</p>
@@ -494,6 +495,7 @@ export const ProductInputForm = (props) => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 placeholder="Enter product stock"
+                spellCheck={false}
                 className={formik.touched.stock && formik.errors.stock ? 'errMsg' : null} />
             {formik.touched.stock && formik.errors.stock && (
                 <p className="errMsg">{formik.errors.stock}</p>
@@ -521,6 +523,7 @@ export const ProductInputForm = (props) => {
                         onBlur={formik.handleBlur}
                         placeholder="Enter color name"
                         style={{ marginRight: '10px' }}
+                        spellCheck={false}
                         className={formik.touched.colors && formik.errors.colorsIndex?.includes(index) && formik.errors.colorsName ? 'errMsg shortInput' : 'shortInput'} />
                     <input
                         type="text"
@@ -529,6 +532,7 @@ export const ProductInputForm = (props) => {
                         onChange={(e) => changeColor(e.target.value, index, false, true)}
                         onBlur={formik.handleBlur}
                         placeholder="Enter color hex"
+                        spellCheck={false}
                         className={formik.touched.colors && formik.errors.colorsIndex?.includes(index) && (formik.errors.colorsHexValue || formik.errors.colorsHexValueRegex) ? 'errMsg shortInput' : 'shortInput'} />
                     <span
                         className="shortInput bi bi-dash-circle"
@@ -555,6 +559,7 @@ export const ProductInputForm = (props) => {
             </label>
             <textarea
                 rows={5}
+                spellCheck={false}
                 id="description"
                 name="description"
                 value={formik.values.description}
@@ -579,6 +584,7 @@ export const ProductInputForm = (props) => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 placeholder="Enter product categories"
+                spellCheck={false}
                 className={formik.touched.categories && formik.errors.categories ? 'errMsg' : null} />
             {formik.touched.categories && formik.errors.categories && (
                 <p className="errMsg">{formik.errors.categories}</p>
@@ -596,8 +602,22 @@ export const ProductInputForm = (props) => {
             {urlPictures.map((value, index) => {
                 return (<div key={index}>
                     <div style={{ position: 'relative' }}>
-                        <input type="text" style={{ width: '90%' }} id="pictureUrls" name="pictureUrls" value={value} onChange={(e) => changeUrlPictures(e.target.value, index)} onBlur={formik.handleBlur} placeholder="Enter picture url" className={formik.touched.pictureUrls && formik.errors.urlPictures && formik.errors.urlPicturesIndex?.includes(index) ? 'errMsg' : null} />
-                        <span className="shortInput bi bi-dash-circle" style={{ marginLeft: '10px', position: 'absolute', top: '15px', right: '0px', textAlign: 'right', padding: '0px', margin: '0px' }} onClick={() => removeUrlPictures(index)}></span>
+                        <input 
+                        type="text" 
+                        style={{ width: '90%' }} 
+                        spellCheck={false}
+                        id="pictureUrls" 
+                        name="pictureUrls" 
+                        value={value} 
+                        onChange={(e) => changeUrlPictures(e.target.value, index)} 
+                        onBlur={formik.handleBlur} 
+                        placeholder="Enter picture url" 
+                        className={formik.touched.pictureUrls && formik.errors.urlPictures && formik.errors.urlPicturesIndex?.includes(index) ? 'errMsg' : null} />
+                        <span 
+                        className="shortInput bi bi-dash-circle" 
+                        style={{ marginLeft: '10px', position: 'absolute', top: '15px', right: '0px', textAlign: 'right', padding: '0px', margin: '0px' }} 
+                        onClick={() => removeUrlPictures(index)}>
+                        </span>
                     </div>
                     {formik.touched.pictureUrls && formik.errors.urlPictures && formik.errors.urlPicturesIndex?.includes(index) && (
                         <p className="errMsg">{formik.errors.urlPictures}</p>
@@ -619,6 +639,7 @@ export const ProductInputForm = (props) => {
                     key={index}>
                     <input
                         type="text"
+                        spellCheck={false}
                         id="sizes"
                         name="sizes"
                         value={value}

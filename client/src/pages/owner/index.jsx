@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import '../../App.css';
+import '../owner/index.scss'
 import { useMutationAddProduct } from "../../data/mutations/add-product";
 import { useMutationRemoveProduct } from "../../data/mutations/remove-product";
 import { useQueryGetProducts } from '../../data/queries/get-products';
@@ -165,7 +166,7 @@ export const Owner = (props) => {
             })
         }
     }, [data])
-    return <div style={{ width: '100vw', position: 'relative' }}>
+    return <div id="owner-flow" className="owner-flow" style={{ width: '100vw', position: 'relative', marginTop:'50px' }}>
         <StoreContext.Provider value={store}>
             <ProductInputForm className="owner-input-form" isShow={isShow}></ProductInputForm>
         </StoreContext.Provider>

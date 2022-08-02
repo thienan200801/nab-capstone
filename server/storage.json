@@ -18,18 +18,17 @@
                 "hexValue": "#803362"
             },
             {
-                "name": "tím",
-                "hexValue": "#cbd3d5"
+                "name": "black",
+                "hexValue": "#223"
             }
         ],
         "sizes": [
             "3",
             "36",
-            "37",
             "38"
         ],
         "featuringFrom": "11/11/2022",
-        "featuringTo": "12/12/2022"
+        "featuringTo": "20/12/2022"
     },
     {
         "id": "d06ea227-bc1d-4f56-b4fe-018bf5dba9ac",
@@ -64,38 +63,37 @@
         "featuringTo": null
     },
     {
-        "id": "3c6e8e9e-35fb-41be-a4eb-bc32b8054280",
-        "name": "Nước rửa khóe mắt chó mèo Precaten",
-        "price": 12222,
-        "stock": 123,
+        "id": "7f1a464f-172d-4d3c-886d-5a162b355782",
+        "name": "Heineiken",
+        "price": 12000,
+        "stock": 100,
+        "description": "no description",
         "categories": [
-            "cate1",
-            " cate2",
-            " cate3"
+            "shoes"
         ],
         "pictures": [
-            "http",
-            "httpsc"
+            "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUSExMVFhUVFRUVFRAQFRAQEBAVFRIWFhUVFRUYHSggGBolGxUVITUhJSkrLi4uFx81OjMsNyktLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS8tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgMEAQIHAAj/xAA9EAABAwMDAgQEAwUGBwEAAAABAgMRAAQhBRIxBkETIlFhMnGBkSNCUgcUocHwFTNDctHhFlNigpKx8cL/xAAaAQADAQEBAQAAAAAAAAAAAAADBAUCBgEA/8QAMhEAAgIBAgMGBQUAAgMAAAAAAQIAAxEEIRIxQQUTIlFhcYGRsdHwFDKhweEVQiOi8f/aAAwDAQACEQMRAD8AXuoHkpbMkTXOV5JPvVu91Bbp8x+la2rG4getI6etqU8RyZL0Wm/TVkMd5WDZrykEU62GipCQSKzeaSgjih/r1ziY/wCTr4sYiIqtKIalZ7FRVHbT6PkZEpo4YZE1mthWIqVtFekzROJsy0Tim3TNEASCeaA2SYUD7in60goEVM117LgAyL2lqHQAL1gd/SUkcUtalZlCop/eGKXdRZCnAKBpdS+dztFtFqm4t+UA22nKVmpndOUmm9uyAAA9Kr3dvGK3+uZmjTauzOSNotabKHUKABKVAwoSk+oI9DXQP2h6MH2EXbKdpAG5KRBGM8dxSNhLg+ddl0d9t23HBSRCh7Ec/SlO0bXrsruXmM/EdR9ob9SykDoZxOxaU4oJSkkn5gY5M9gPU01MO21ogpKhcLIkssnw7eT/AM1wAFzv7R/Ed1hpblo6tCSUtLM+XE/9JPp/rVIaeENqW6VIVjw2gAHVmcFeJSnvTlhTUKrFvCeQHM+55jHXGPUxxWDbyXqDWnH1oBhIQ",
+            "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUSExMVFhUVFRUVFRAQFRAQEBAVFRIWFhUVFRUYHSggGBolGxUVITUhJSkrLi4uFx81OjMsNyktLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS8tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgMEAQIHAAj/xAA9EAABAwMDAgQEAwUGBwEAAAABAgMRAAQhBRIxBkETIlFhMnGBkSNCUgcUocHwFTNDctHhFlNigpKx8cL/xAAaAQADAQEBAQAAAAAAAAAAAAADBAUCBgEA/8QAMhEAAgIBAgMGBQUAAgMAAAAAAQIAAxEEIRIxQQUTIlFhcYGRsdHwFDKhweEVQiOi8f/aAAwDAQACEQMRAD8AXuoHkpbMkTXOV5JPvVu91Bbp8x+la2rG4getI6etqU8RyZL0Wm/TVkMd5WDZrykEU62GipCQSKzeaSgjih/r1ziY/wCTr4sYiIqtKIalZ7FRVHbT6PkZEpo4YZE1mthWIqVtFekzROJsy0Tim3TNEASCeaA2SYUD7in60goEVM117LgAyL2lqHQAL1gd/SUkcUtalZlCop/eGKXdRZCnAKBpdS+dztFtFqm4t+UA22nKVmpndOUmm9uyAAA9Kr3dvGK3+uZmjTauzOSNotabKHUKABKVAwoSk+oI9DXQP2h6MH2EXbKdpAG5KRBGM8dxSNhLg+ddl0d9t23HBSRCh7Ec/SlO0bXrsruXmM/EdR9ob9SykDoZxOxaU4oJSkkn5gY5M9gPU01MO21ogpKhcLIkssnw7eT/AM1wAFzv7R/Ed1hpblo6tCSUtLM+XE/9JPp/rVIaeENqW6VIVjw2gAHVmcFeJSnvTlhTUKrFvCeQHM+55jHXGPUxxWDbyXqDWnH1oBhIQ",
+            "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUSExMVFhUVFRUVFRAQFRAQEBAVFRIWFhUVFRUYHSggGBolGxUVITUhJSkrLi4uFx81OjMsNyktLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS8tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgMEAQIHAAj/xAA9EAABAwMDAgQEAwUGBwEAAAABAgMRAAQhBRIxBkETIlFhMnGBkSNCUgcUocHwFTNDctHhFlNigpKx8cL/xAAaAQADAQEBAQAAAAAAAAAAAAADBAUCBgEA/8QAMhEAAgIBAgMGBQUAAgMAAAAAAQIAAxEEIRIxQQUTIlFhcYGRsdHwFDKhweEVQiOi8f/aAAwDAQACEQMRAD8AXuoHkpbMkTXOV5JPvVu91Bbp8x+la2rG4getI6etqU8RyZL0Wm/TVkMd5WDZrykEU62GipCQSKzeaSgjih/r1ziY/wCTr4sYiIqtKIalZ7FRVHbT6PkZEpo4YZE1mthWIqVtFekzROJsy0Tim3TNEASCeaA2SYUD7in60goEVM117LgAyL2lqHQAL1gd/SUkcUtalZlCop/eGKXdRZCnAKBpdS+dztFtFqm4t+UA22nKVmpndOUmm9uyAAA9Kr3dvGK3+uZmjTauzOSNotabKHUKABKVAwoSk+oI9DXQP2h6MH2EXbKdpAG5KRBGM8dxSNhLg+ddl0d9t23HBSRCh7Ec/SlO0bXrsruXmM/EdR9ob9SykDoZxOxaU4oJSkkn5gY5M9gPU01MO21ogpKhcLIkssnw7eT/AM1wAFzv7R/Ed1hpblo6tCSUtLM+XE/9JPp/rVIaeENqW6VIVjw2gAHVmcFeJSnvTlhTUKrFvCeQHM+55jHXGPUxxWDbyXqDWnH1oBhIQ"
         ],
         "colors": [
             {
                 "name": "green",
-                "hexValue": "#112"
+                "hexValue": "#234"
             },
             {
-                "name": "red",
-                "hexValue": "#123"
-            },
-            {
-                "name": "blue",
-                "hexValue": "#125"
+                "name": "yellow",
+                "hexValue": "#234"
             }
         ],
         "sizes": [
-            "23",
-            "24"
+            "45",
+            "35",
+            "27",
+            "34",
+            "55"
         ],
-        "featuringFrom": "01/01/2001",
-        "featuringTo": "02/02/2002"
+        "featuringFrom": "",
+        "featuringTo": ""
     }
 ]
