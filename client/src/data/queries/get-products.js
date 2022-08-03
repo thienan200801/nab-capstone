@@ -8,6 +8,7 @@ const GET_PRODUCTS = gql`query getProduct{
       stock
       colors {
         name
+        hexValue
       }
       description
       categories

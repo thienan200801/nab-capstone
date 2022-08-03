@@ -1,36 +1,36 @@
 [
     {
-        "id": "0c01eac9-51e6-4be3-8cbd-36854f066cf8",
-        "name": "Nike React Infinity Run Flyknit 3",
-        "price": 4409000,
-        "stock": 100,
+        "id": "ec8a2326-3414-4063-bbe0-7c7286455acc",
+        "name": "Nike React Infinity Run Flyknit 1234",
+        "price": 102,
+        "stock": 1004,
         "categories": [
             "running",
             "women"
         ],
         "pictures": [
             "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/03bb7279-a9df-4f6c-a2c1-8cfa2290c501/react-infinity-run-flyknit-3-road-running-shoes-WnVRk9.png",
-            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/83f84f6a-a25b-4c40-b6e8-e1fd5700b5eb/react-infinity-run-flyknit-3-road-running-shoes-WnVRk9.png"
+            "https"
         ],
         "colors": [
             {
-                "name": "Pink Prime",
+                "name": "xanh dương",
                 "hexValue": "#803362"
             },
             {
-                "name": "Pure Platinum",
-                "hexValue": "#cbd3d5"
+                "name": "yellow",
+                "hexValue": "#223"
             }
         ],
         "sizes": [
-            "35",
             "36",
-            "37",
             "38"
-        ]
+        ],
+        "featuringFrom": "11/11/2022",
+        "featuringTo": "20/12/2023"
     },
     {
-        "id": "f59863b1-56c6-4a85-be8c-a9da689a55cd",
+        "id": "d06ea227-bc1d-4f56-b4fe-018bf5dba9ac",
         "name": "Nike React Infinity Run Flyknit 3",
         "price": 4409000,
         "stock": 100,
@@ -57,36 +57,109 @@
             "36",
             "37",
             "38"
-        ]
+        ],
+        "featuringFrom": null,
+        "featuringTo": null
     },
     {
-        "id": "0186ddc8-3c22-4c72-9237-3ef4a58e29a4",
-        "name": "Nike React Infinity Run Flyknit 3",
-        "price": 4409000,
+        "id": "7f1a464f-172d-4d3c-886d-5a162b355782",
+        "name": "Heineiken",
+        "price": 12001,
         "stock": 100,
+        "description": "no description",
         "categories": [
-            "running",
-            "women"
+            "shoes"
         ],
         "pictures": [
-            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/03bb7279-a9df-4f6c-a2c1-8cfa2290c501/react-infinity-run-flyknit-3-road-running-shoes-WnVRk9.png",
-            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/83f84f6a-a25b-4c40-b6e8-e1fd5700b5eb/react-infinity-run-flyknit-3-road-running-shoes-WnVRk9.png"
+            "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUSExMVFhUVFRUVFRAQFRAQEBAVFRIWFhUVFRUYHSggGBolGxUVITUhJSkrLi4uFx81OjMsNyktLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS8tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgMEAQIHAAj/xAA9EAABAwMDAgQEAwUGBwEAAAABAgMRAAQhBRIxBkETIlFhMnGBkSNCUgcUocHwFTNDctHhFlNigpKx8cL/xAAaAQADAQEBAQAAAAAAAAAAAAADBAUCBgEA/8QAMhEAAgIBAgMGBQUAAgMAAAAAAQIAAxEEIRIxQQUTIlFhcYGRsdHwFDKhweEVQiOi8f/aAAwDAQACEQMRAD8AXuoHkpbMkTXOV5JPvVu91Bbp8x+la2rG4getI6etqU8RyZL0Wm/TVkMd5WDZrykEU62GipCQSKzeaSgjih/r1ziY/wCTr4sYiIqtKIalZ7FRVHbT6PkZEpo4YZE1mthWIqVtFekzROJsy0Tim3TNEASCeaA2SYUD7in60goEVM117LgAyL2lqHQAL1gd/SUkcUtalZlCop/eGKXdRZCnAKBpdS+dztFtFqm4t+UA22nKVmpndOUmm9uyAAA9Kr3dvGK3+uZmjTauzOSNotabKHUKABKVAwoSk+oI9DXQP2h6MH2EXbKdpAG5KRBGM8dxSNhLg+ddl0d9t23HBSRCh7Ec/SlO0bXrsruXmM/EdR9ob9SykDoZxOxaU4oJSkkn5gY5M9gPU01MO21ogpKhcLIkssnw7eT/AM1wAFzv7R/Ed1hpblo6tCSUtLM+XE/9JPp/rVIaeENqW6VIVjw2gAHVmcFeJSnvTlhTUKrFvCeQHM+55jHXGPUxxWDbyXqDWnH1oBhIQ",
+            "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUSExMVFhUVFRUVFRAQFRAQEBAVFRIWFhUVFRUYHSggGBolGxUVITUhJSkrLi4uFx81OjMsNyktLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS8tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgMEAQIHAAj/xAA9EAABAwMDAgQEAwUGBwEAAAABAgMRAAQhBRIxBkETIlFhMnGBkSNCUgcUocHwFTNDctHhFlNigpKx8cL/xAAaAQADAQEBAQAAAAAAAAAAAAADBAUCBgEA/8QAMhEAAgIBAgMGBQUAAgMAAAAAAQIAAxEEIRIxQQUTIlFhcYGRsdHwFDKhweEVQiOi8f/aAAwDAQACEQMRAD8AXuoHkpbMkTXOV5JPvVu91Bbp8x+la2rG4getI6etqU8RyZL0Wm/TVkMd5WDZrykEU62GipCQSKzeaSgjih/r1ziY/wCTr4sYiIqtKIalZ7FRVHbT6PkZEpo4YZE1mthWIqVtFekzROJsy0Tim3TNEASCeaA2SYUD7in60goEVM117LgAyL2lqHQAL1gd/SUkcUtalZlCop/eGKXdRZCnAKBpdS+dztFtFqm4t+UA22nKVmpndOUmm9uyAAA9Kr3dvGK3+uZmjTauzOSNotabKHUKABKVAwoSk+oI9DXQP2h6MH2EXbKdpAG5KRBGM8dxSNhLg+ddl0d9t23HBSRCh7Ec/SlO0bXrsruXmM/EdR9ob9SykDoZxOxaU4oJSkkn5gY5M9gPU01MO21ogpKhcLIkssnw7eT/AM1wAFzv7R/Ed1hpblo6tCSUtLM+XE/9JPp/rVIaeENqW6VIVjw2gAHVmcFeJSnvTlhTUKrFvCeQHM+55jHXGPUxxWDbyXqDWnH1oBhIQ",
+            "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUSExMVFhUVFRUVFRAQFRAQEBAVFRIWFhUVFRUYHSggGBolGxUVITUhJSkrLi4uFx81OjMsNyktLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS8tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgMEAQIHAAj/xAA9EAABAwMDAgQEAwUGBwEAAAABAgMRAAQhBRIxBkETIlFhMnGBkSNCUgcUocHwFTNDctHhFlNigpKx8cL/xAAaAQADAQEBAQAAAAAAAAAAAAADBAUCBgEA/8QAMhEAAgIBAgMGBQUAAgMAAAAAAQIAAxEEIRIxQQUTIlFhcYGRsdHwFDKhweEVQiOi8f/aAAwDAQACEQMRAD8AXuoHkpbMkTXOV5JPvVu91Bbp8x+la2rG4getI6etqU8RyZL0Wm/TVkMd5WDZrykEU62GipCQSKzeaSgjih/r1ziY/wCTr4sYiIqtKIalZ7FRVHbT6PkZEpo4YZE1mthWIqVtFekzROJsy0Tim3TNEASCeaA2SYUD7in60goEVM117LgAyL2lqHQAL1gd/SUkcUtalZlCop/eGKXdRZCnAKBpdS+dztFtFqm4t+UA22nKVmpndOUmm9uyAAA9Kr3dvGK3+uZmjTauzOSNotabKHUKABKVAwoSk+oI9DXQP2h6MH2EXbKdpAG5KRBGM8dxSNhLg+ddl0d9t23HBSRCh7Ec/SlO0bXrsruXmM/EdR9ob9SykDoZxOxaU4oJSkkn5gY5M9gPU01MO21ogpKhcLIkssnw7eT/AM1wAFzv7R/Ed1hpblo6tCSUtLM+XE/9JPp/rVIaeENqW6VIVjw2gAHVmcFeJSnvTlhTUKrFvCeQHM+55jHXGPUxxWDbyXqDWnH1oBhIQ"
         ],
         "colors": [
             {
-                "name": "Pink Prime",
-                "hexValue": "#803362"
+                "name": "green",
+                "hexValue": "#234"
             },
             {
-                "name": "Pure Platinum",
-                "hexValue": "#cbd3d5"
+                "name": "yellow",
+                "hexValue": "#234"
+            },
+            {
+                "name": "black",
+                "hexValue": "#222"
+            },
+            {
+                "name": "blue",
+                "hexValue": "#678"
             }
         ],
         "sizes": [
+            "45",
             "35",
-            "36",
-            "37",
-            "38"
-        ]
+            "34"
+        ],
+        "featuringFrom": "",
+        "featuringTo": ""
+    },
+    {
+        "id": "4152a174-e18a-4383-84a0-f9420c360557",
+        "name": "Heineiken",
+        "price": 12000,
+        "stock": 100,
+        "description": "",
+        "categories": [
+            "beer",
+            " drinks"
+        ],
+        "pictures": [
+            "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUSExMVFhUVFRUVFRAQFRAQEBAVFRIWFhUVFRUYHSggGBolGxUVITUhJSkrLi4uFx81OjMsNyktLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS8tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgMEAQIHAAj/xAA9EAABAwMDAgQEAwUGBwEAAAABAgMRAAQhBRIxBkETIlFhMnGBkSNCUgcUocHwFTNDctHhFlNigpKx8cL/xAAaAQADAQEBAQAAAAAAAAAAAAADBAUCBgEA/8QAMhEAAgIBAgMGBQUAAgMAAAAAAQIAAxEEIRIxQQUTIlFhcYGRsdHwFDKhweEVQiOi8f/aAAwDAQACEQMRAD8AXuoHkpbMkTXOV5JPvVu91Bbp8x+la2rG4getI6etqU8RyZL0Wm/TVkMd5WDZrykEU62GipCQSKzeaSgjih/r1ziY/wCTr4sYiIqtKIalZ7FRVHbT6PkZEpo4YZE1mthWIqVtFekzROJsy0Tim3TNEASCeaA2SYUD7in60goEVM117LgAyL2lqHQAL1gd/SUkcUtalZlCop/eGKXdRZCnAKBpdS+dztFtFqm4t+UA22nKVmpndOUmm9uyAAA9Kr3dvGK3+uZmjTauzOSNotabKHUKABKVAwoSk+oI9DXQP2h6MH2EXbKdpAG5KRBGM8dxSNhLg+ddl0d9t23HBSRCh7Ec/SlO0bXrsruXmM/EdR9ob9SykDoZxOxaU4oJSkkn5gY5M9gPU01MO21ogpKhcLIkssnw7eT/AM1wAFzv7R/Ed1hpblo6tCSUtLM+XE/9JPp/rVIaeENqW6VIVjw2gAHVmcFeJSnvTlhTUKrFvCeQHM+55jHXGPUxxWDbyXqDWnH1oBhIQ",
+            "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUSExMVFhUVFRUVFRAQFRAQEBAVFRIWFhUVFRUYHSggGBolGxUVITUhJSkrLi4uFx81OjMsNyktLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS8tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgMEAQIHAAj/xAA9EAABAwMDAgQEAwUGBwEAAAABAgMRAAQhBRIxBkETIlFhMnGBkSNCUgcUocHwFTNDctHhFlNigpKx8cL/xAAaAQADAQEBAQAAAAAAAAAAAAADBAUCBgEA/8QAMhEAAgIBAgMGBQUAAgMAAAAAAQIAAxEEIRIxQQUTIlFhcYGRsdHwFDKhweEVQiOi8f/aAAwDAQACEQMRAD8AXuoHkpbMkTXOV5JPvVu91Bbp8x+la2rG4getI6etqU8RyZL0Wm/TVkMd5WDZrykEU62GipCQSKzeaSgjih/r1ziY/wCTr4sYiIqtKIalZ7FRVHbT6PkZEpo4YZE1mthWIqVtFekzROJsy0Tim3TNEASCeaA2SYUD7in60goEVM117LgAyL2lqHQAL1gd/SUkcUtalZlCop/eGKXdRZCnAKBpdS+dztFtFqm4t+UA22nKVmpndOUmm9uyAAA9Kr3dvGK3+uZmjTauzOSNotabKHUKABKVAwoSk+oI9DXQP2h6MH2EXbKdpAG5KRBGM8dxSNhLg+ddl0d9t23HBSRCh7Ec/SlO0bXrsruXmM/EdR9ob9SykDoZxOxaU4oJSkkn5gY5M9gPU01MO21ogpKhcLIkssnw7eT/AM1wAFzv7R/Ed1hpblo6tCSUtLM+XE/9JPp/rVIaeENqW6VIVjw2gAHVmcFeJSnvTlhTUKrFvCeQHM+55jHXGPUxxWDbyXqDWnH1oBhIQ"
+        ],
+        "colors": [
+            {
+                "name": "green",
+                "hexValue": "#222"
+            }
+        ],
+        "sizes": [
+            "45"
+        ],
+        "featuringFrom": "01/01/2023",
+        "featuringTo": "02/02/2023"
+    },
+    {
+        "id": "1aa84b7b-74aa-4544-aed1-b3124dd6db3d",
+        "name": "Heineiken",
+        "price": 12000,
+        "stock": 12,
+        "description": "",
+        "categories": [
+            "beer",
+            " drinks"
+        ],
+        "pictures": [
+            "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUSExMVFhUVFRUVFRAQFRAQEBAVFRIWFhUVFRUYHSggGBolGxUVITUhJSkrLi4uFx81OjMsNyktLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS8tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgMEAQIHAAj/xAA9EAABAwMDAgQEAwUGBwEAAAABAgMRAAQhBRIxBkETIlFhMnGBkSNCUgcUocHwFTNDctHhFlNigpKx8cL/xAAaAQADAQEBAQAAAAAAAAAAAAADBAUCBgEA/8QAMhEAAgIBAgMGBQUAAgMAAAAAAQIAAxEEIRIxQQUTIlFhcYGRsdHwFDKhweEVQiOi8f/aAAwDAQACEQMRAD8AXuoHkpbMkTXOV5JPvVu91Bbp8x+la2rG4getI6etqU8RyZL0Wm/TVkMd5WDZrykEU62GipCQSKzeaSgjih/r1ziY/wCTr4sYiIqtKIalZ7FRVHbT6PkZEpo4YZE1mthWIqVtFekzROJsy0Tim3TNEASCeaA2SYUD7in60goEVM117LgAyL2lqHQAL1gd/SUkcUtalZlCop/eGKXdRZCnAKBpdS+dztFtFqm4t+UA22nKVmpndOUmm9uyAAA9Kr3dvGK3+uZmjTauzOSNotabKHUKABKVAwoSk+oI9DXQP2h6MH2EXbKdpAG5KRBGM8dxSNhLg+ddl0d9t23HBSRCh7Ec/SlO0bXrsruXmM/EdR9ob9SykDoZxOxaU4oJSkkn5gY5M9gPU01MO21ogpKhcLIkssnw7eT/AM1wAFzv7R/Ed1hpblo6tCSUtLM+XE/9JPp/rVIaeENqW6VIVjw2gAHVmcFeJSnvTlhTUKrFvCeQHM+55jHXGPUxxWDbyXqDWnH1oBhIQ",
+            "https"
+        ],
+        "colors": [
+            {
+                "name": "green",
+                "hexValue": "#223"
+            },
+            {
+                "name": "red",
+                "hexValue": "#223"
+            },
+            {
+                "name": "black",
+                "hexValue": "#235"
+            }
+        ],
+        "sizes": [
+            "34",
+            "35"
+        ],
+        "featuringFrom": "11/11/2022",
+        "featuringTo": "11/11/2022"
     }
 ]

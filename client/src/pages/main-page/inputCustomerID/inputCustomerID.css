@@ -1,0 +1,64 @@
+#inputCustomerID.container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#inputCustomerID .main {
+    width: 300px;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#inputCustomerID h3{
+    margin: 15px 0px;
+}
+
+#inputCustomerID input {
+    width: 80%;
+    height: 2rem;
+    line-height: 2rem;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 0px 10px;
+}
+
+#inputCustomerID input:focus {
+    outline: none;
+    border: 1px solid var(--primary);
+}
+
+#inputCustomerID .btn {
+    margin-top: 30px;
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    background-color: var(--primary);
+    color: white;
+    width: 100px;
+    padding: 5px 10px;
+    line-height: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* #inputCustomerID .btn:hover{
+    background-color: var(--btn-hover);
+    border-color: var(--btn-hover);
+    cursor: pointer;
+} */
+#inputCustomerID .btn:disabled {
+    background-color: var(--btn-hover);
+    border-color: var(--btn-hover);
+    cursor: default;
+}

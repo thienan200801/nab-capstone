@@ -93,6 +93,8 @@ const schema = gql`
         pictures: [String!]
         colors: [ColorInput!]!
         sizes: [String!]
+        featuringFrom: String
+        featuringTo: String
     }
 
     input UpdateProductInput {
@@ -105,6 +107,8 @@ const schema = gql`
         pictures: [String!]
         colors: [ColorInput!]
         sizes: [String!]
+        featuringFrom: String
+        featuringTo: String
     }
 
     input CartItemInput {
