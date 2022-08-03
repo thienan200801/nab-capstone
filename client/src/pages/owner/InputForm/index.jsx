@@ -260,7 +260,6 @@ export const ProductInputForm = (props) => {
             })
             colorsTemp.push(tempObj);
         })
-        console.log(colorsTemp);
         if (hexValue === true) {
             colorsTemp[index].hexValue = value;
         }
@@ -341,16 +340,9 @@ export const ProductInputForm = (props) => {
                         if (!isEqualArray(values[value], store.editInfo.dataEdit[value])) {
                             product[value] = values[value]
                         }
-                        // console.log("TH1")
-                        // console.log(values[value]);
-                        // console.log(store.editInfo.dataEdit[value])
-                        // console.log(isEqualArray(values[value], store.editInfo.dataEdit[value]))
-
                     }
                     if (!Array.isArray(values[value])) {
                         product[value] = values[value]
-                        // console.log(store.editInfo.dataEdit[value]);
-                        // console.log(values[value]);
                     }
                 }
                 if (value === 'price' && store.editInfo.dataEdit[value].toString() !== values[value].toString()) {
@@ -363,7 +355,19 @@ export const ProductInputForm = (props) => {
                     product.pictureUrl = values.pictureUrl
                 }
             })
-
+            // if (product.__typename) {
+            //     delete product['__typename']
+            // }
+            const convertColorObject = (colors)=>{
+                let newArrayColors = new Array();
+                colors.map((v,i)=>{
+                    let color = {};
+                    color.name = v.name;
+                    color.hexValue = v.hexValue;
+                    newArrayColors.push(color);
+                })
+                return newArrayColors;
+            }
 
             if (Object.keys(product).length > 0) {
                 product.id = store.editInfo.dataEdit.id;
@@ -372,8 +376,7 @@ export const ProductInputForm = (props) => {
                     ...(product.name && { name: product.name }),
                     ...(product.price && { price: parseInt(product.price) }),
                     ...(product.stock && { stock: parseInt(product.stock) }),
-                    ...(product.stock && { stock: parseInt(product.stock) }),
-                    ...(product.colors && { colors: [...product.colors] }),
+                    ...(product.colors && { colors: convertColorObject(product.colors)}),
                     ...(product.description && { description: product.description }),
                     ...(product.categories && { categories: [...product.categories.split(',')] }),
                     ...(product.sizes && { sizes: [...product.sizes] }),
@@ -392,7 +395,6 @@ export const ProductInputForm = (props) => {
                 )
 
             }
-
 
         }
     }
@@ -448,7 +450,7 @@ export const ProductInputForm = (props) => {
             {/* Product name */}
             <label
                 htmlFor="name">
-                Name <span style={{color:'red'}}>(*)</span>
+                Name <span style={{ color: 'red' }}>(*)</span>
             </label>
             <input
                 type="text"
@@ -467,7 +469,7 @@ export const ProductInputForm = (props) => {
             {/* Product price */}
             <label
                 htmlFor="price">
-                Price <span style={{color:'red'}}>(*)</span>
+                Price <span style={{ color: 'red' }}>(*)</span>
             </label>
             <input
                 type="text"
@@ -485,14 +487,15 @@ export const ProductInputForm = (props) => {
             {/* Product stock */}
             <label
                 htmlFor="stock">
-                Stock <span style={{color:'red'}}>(*)</span>
+                Stock <span style={{ color: 'red' }}>(*)</span>
             </label>
             <input
                 type="text"
                 id="stock"
                 name="stock"
                 value={formik.values.stock}
-                onChange={formik.handleChange}
+                // onChange={formik.handleChange}
+                onChange={() => console.log()}
                 onBlur={formik.handleBlur}
                 placeholder="Enter product stock"
                 spellCheck={false}
@@ -504,7 +507,7 @@ export const ProductInputForm = (props) => {
             {/* Product color */}
             <label
                 htmlFor="colorName">
-                Product Color <span style={{color:'red'}}>(*)</span>
+                Product Color <span style={{ color: 'red' }}>(*)</span>
                 <span
                     className="bi bi-plus"
                     onClick={() => addColor()}>
@@ -574,7 +577,7 @@ export const ProductInputForm = (props) => {
             {/* Product categories */}
             <label
                 htmlFor="categories">
-                Categories <span style={{color:'red'}}>(*)</span>
+                Categories <span style={{ color: 'red' }}>(*)</span>
             </label>
             <input
                 type="text"
@@ -593,7 +596,7 @@ export const ProductInputForm = (props) => {
             {/* Product url */}
             <label
                 htmlFor="pictureUrl">
-                Picture url <span style={{color:'red'}}>(*)</span>
+                Picture url <span style={{ color: 'red' }}>(*)</span>
                 <span
                     className="bi bi-plus"
                     onClick={() => addUrlPictures()}>
@@ -602,21 +605,21 @@ export const ProductInputForm = (props) => {
             {urlPictures.map((value, index) => {
                 return (<div key={index}>
                     <div style={{ position: 'relative' }}>
-                        <input 
-                        type="text" 
-                        style={{ width: '90%' }} 
-                        spellCheck={false}
-                        id="pictureUrls" 
-                        name="pictureUrls" 
-                        value={value} 
-                        onChange={(e) => changeUrlPictures(e.target.value, index)} 
-                        onBlur={formik.handleBlur} 
-                        placeholder="Enter picture url" 
-                        className={formik.touched.pictureUrls && formik.errors.urlPictures && formik.errors.urlPicturesIndex?.includes(index) ? 'errMsg' : null} />
-                        <span 
-                        className="shortInput bi bi-dash-circle" 
-                        style={{ marginLeft: '10px', position: 'absolute', top: '15px', right: '0px', textAlign: 'right', padding: '0px', margin: '0px' }} 
-                        onClick={() => removeUrlPictures(index)}>
+                        <input
+                            type="text"
+                            style={{ width: '90%' }}
+                            spellCheck={false}
+                            id="pictureUrls"
+                            name="pictureUrls"
+                            value={value}
+                            onChange={(e) => changeUrlPictures(e.target.value, index)}
+                            onBlur={formik.handleBlur}
+                            placeholder="Enter picture url"
+                            className={formik.touched.pictureUrls && formik.errors.urlPictures && formik.errors.urlPicturesIndex?.includes(index) ? 'errMsg' : null} />
+                        <span
+                            className="shortInput bi bi-dash-circle"
+                            style={{ marginLeft: '10px', position: 'absolute', top: '15px', right: '0px', textAlign: 'right', padding: '0px', margin: '0px' }}
+                            onClick={() => removeUrlPictures(index)}>
                         </span>
                     </div>
                     {formik.touched.pictureUrls && formik.errors.urlPictures && formik.errors.urlPicturesIndex?.includes(index) && (
@@ -628,7 +631,7 @@ export const ProductInputForm = (props) => {
             {/* Product sizes */}
             <label
                 htmlFor="sizes">
-                Sizes <span style={{color:'red'}}>(*)</span>
+                Sizes <span style={{ color: 'red' }}>(*)</span>
                 <span
                     className="bi bi-plus"
                     onClick={() => addSize()}>
