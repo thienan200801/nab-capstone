@@ -1,0 +1,65 @@
+*{
+    background-color: rgb(247,247,247);
+}
+.success-img{
+    width: 30%;
+    height: 20%;
+    display: flex;
+    margin: auto;
+}
+.text{
+    margin: 3rem;
+    text-align: center;
+}
+.title{
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 0.2rem;
+}
+.message{
+    font-size: 1.2rem;
+    font-weight: 900;
+    padding: 1rem;
+    border-top: 3px solid green;
+    margin: 2rem 14rem;
+    background-color: rgb(226, 225, 225);
+    display: flex;
+}
+.message-content{
+    background-color: rgb(226, 225, 225);
+    align-self: center;
+    margin-left: 1rem;
+    letter-spacing: 1px;
+    font-size: 1rem;
+}
+.bi{
+    background-color: rgb(226, 225, 225);
+    color: green;
+    align-self: center;
+    margin-left: 1rem 2rem;
+}
+.btnBackToHome{
+    color: rgb(0, 0, 0);
+}
+.btnBackToHome:hover{
+    text-decoration: none;
+    color: #fff;
+}
+.inverted-2 {
+    background:
+      linear-gradient( 90deg, #000  50%, #fff 0),
+      linear-gradient(-90deg, #000  50%, #fff 0),
+      linear-gradient( 90deg, #0000 50%, #000 0),
+      linear-gradient(-90deg, #0000 50%, #000 0);
+    background-repeat: no-repeat;
+    background-size: 200% 51%;
+    background-position: top left, bottom right;
+    -webkit-background-clip: text, text, padding-box, padding-box;
+            background-clip: text, text, padding-box, padding-box;
+    transition: 0.8s
+}
+
+.inverted-2:hover {
+    background-position: top right, bottom left;
+    color: #fff;
+}

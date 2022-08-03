@@ -1,0 +1,150 @@
+:root{
+    --primaryfont: "League Spartan";
+    --font-size: 18px;
+    --table-color: #ccc;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--primaryfont);
+    font-size: var(--font-size);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.item-cart-wrapper{
+    margin: 1rem 10rem 0rem;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+.item-quantity-edit{
+    border: 1px solid var(--table-color);
+    width: 1.5rem;
+    text-align: center;
+} 
+.item-quantity-edit:focus{
+    border: 1px solid var(--table-color);
+    outline: none;
+}
+
+.item-quantity-content {
+    border: 1px solid var(--table-color);
+    width: 2rem;
+    text-align: center;
+}
+.cart-item-img{
+    width: 50px;
+    height: 50px;
+}
+.item-quantity-edit{
+    font-weight: bold;
+}
+.item-quantity-edit:hover{
+    background-color: rgb(233, 232, 232);
+}
+
+.cart-total-title{
+    position: relative;
+    left: 50%;
+    margin-top: 2rem;
+    width: fit-content;
+    font-weight: 700;
+}
+.cart-total-block{
+    position: relative;
+    left: 50%;
+    margin-top: 2rem;
+    width: 37%;
+}
+.cart-total-wrapper{
+    left: 50%;
+    display: flex;
+    margin-top: 2rem;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+.cart-total-text{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+.cart-total-content{
+    margin-left: 4rem;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+}
+
+.btn.btn-dark.btn-m.btn-block{
+    margin: 2rem 0rem;
+    width: 95%;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+}
+.btn-order-content:hover{
+    font-weight: bold;
+    text-decoration: none;
+}
+.btn.btn-dark.btn-m.btn-block.disabled{
+    cursor: no-drop;
+}
+.btn.btn-dark.btn-m.btn-block.disabled:active{
+    box-shadow: 0px 0px #fff;
+}
+.inverted-8 {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #000;
+    background:
+      linear-gradient(-45deg, #000  40%, rgb(85, 85, 85) 0 60%, #000  0) right/300% 100% no-repeat,
+      linear-gradient(-45deg, #0000 40%, rgb(109, 109, 109) 0 60%, #0000 0) right/300% 100% no-repeat;
+    -webkit-background-clip: text, padding-box;
+    background-clip: text, padding-box;
+  }
+.inverted-8:hover {
+    background-position: left;
+    transition: 0.8s
+}
+.remove{
+    display: none;
+}
+.thead-light.header th {
+    color: #282828;
+    font-weight: 900;
+}
+#flexCheckChecked{
+    height: 1rem;
+    width: 1rem;
+    text-align: center;
+    border: 1px solid #fff;
+}
+
+.list-cart-header{
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0rem;
+}
+.logo{
+    max-width: 200px;
+    max-height: 50px;
+    padding-right: 1rem;
+    padding-top: 1rem;
+}
+.cart-title{
+    text-align: center;
+    margin: 1rem 0rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    border-left: 1px solid #ccc;
+    padding-left: 1rem;
+}
+.list-cart-header-left{
+    display: flex;
+}
+
